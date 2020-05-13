@@ -107,10 +107,10 @@ while cont:
     
 
     print('\n')
-    if numMats==1:
+    if numMats==1 and matfunc.if_Square(mats[0]):
         print('**Hidden info**would you additionally like to get the determinant[Yes/No]')
         inp=input()
-        if inp=='Yes' and matfunc.if_Square(mats[0]):
+        if inp=='Yes':
             print(matfunc.determinant(mats[0]))
     print('\n would you like to continue [Y/N]')
     repeat=input()
