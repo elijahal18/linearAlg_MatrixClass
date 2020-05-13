@@ -8,8 +8,7 @@ while cont:
     print('\n')
     print('Remember to always make sure what is being inputed is correct. Email eal510@nyu.edu with errors')
     print('\n')
-    print('What would you like to do with the Matrix:' \
-         '\n(1) Add\n(2) Subtract\n(3) gaussian(for A and B)\n(4) Dot Product\n(5) Transpose\n(6) get inv\n(7) get LU\n(8) solve system')
+    print('What would you like to do with the Matrix: \n(1) Add\n(2) Subtract\n(3) gaussian(for A and B)\n(4) Dot Product\n(5) Transpose\n(6) get inv\n(7) get LU\n(8) solve system')
     print('===================================================================================================')
     choice=input()
     choice=int(choice)
@@ -105,9 +104,15 @@ while cont:
     print('equals:\n')
     for i in range(len(result)):
         print(result[i])
+    
+
     print('\n')
+    if numMats==1:
+        print('**Hidden info**would you additionally like to get the determinant[Yes/No]')
+        inp=input()
+        if inp=='Yes' and matfunc.if_Square(mats[0]):
+            print(matfunc.determinant(mats[0]))
     print('\n would you like to continue [Y/N]')
-    print('\n')
     repeat=input()
     if repeat == 'Y':
         print('\n')
@@ -115,3 +120,4 @@ while cont:
     elif repeat=='N':
         print('Thank you for participating!')
         cont=False
+
