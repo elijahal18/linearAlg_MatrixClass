@@ -85,19 +85,29 @@ while cont:
         print("computing transpose of\n",mats[0],'...')
         result.append(mats[0].getTranspose())
     elif choice == 6:
-        print("computing inverse of\n",mats[0],'...')
-        result.append(matfunc.inverse(mats[0]))
+        try:
+            print("computing inverse of\n",mats[0],'...')
+            result.append(matfunc.inverse(mats[0]))
+        except:
+            result.append("error with matrix")
+            continue
     elif choice == 7:
-        print("computing lu decomposition of\n",mats[0],'...')
-        L,U=matfunc.lu_decomposition(mats[0])
-        result.append(L)
-        result.append(U)
+        try:
+            print("computing lu decomposition of\n",mats[0],'...')
+            L,U=matfunc.lu_decomposition(mats[0])
+            result.append(L)
+            result.append(U)
+        except:
+            result.append("error with matrix")
     elif choice==8:
-        print("Computing X for equation\n AX=B\n",'A=',mats[0],'B=',mats[1], 'And X= vector of variables with the same size as B')
-        print(mats[0],mats[1])
-        print('...')
-        x=matfunc.solveX(mats[0],mats[1])
-        result.append(x)
+        try:
+            print("Computing X for equation\n AX=B\n",'A=',mats[0],'B=',mats[1], 'And X= vector of variables with the same size as B')
+            print(mats[0],mats[1])
+            print('...')
+            x=matfunc.solveX(mats[0],mats[1])
+            result.append(x)
+        except:
+            result.append("error with matrix")
     print('\n')
     print('===================================================================================================')
     print('\n')
@@ -107,11 +117,15 @@ while cont:
     
 
     print('\n')
+    
     if numMats==1 and matfunc.if_Square(mats[0]):
-        print('**Hidden info**would you additionally like to get the determinant[Yes/No]')
-        inp=input()
-        if inp=='Yes':
-            print(matfunc.determinant(mats[0]))
+        try:
+            print('**Hidden info**would you additionally like to get the determinant[Yes/No]')
+            inp=input()
+            if inp=='Yes':
+                print(matfunc.determinant(mats[0]))
+        except:
+            print('cant calculate')
     print('\n would you like to continue [Y/N]')
     repeat=input()
     if repeat == 'Y':
