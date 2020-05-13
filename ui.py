@@ -9,7 +9,7 @@ while cont:
     print('Remember to always make sure what is being inputed is correct. Email eal510@nyu.edu with errors')
     print('\n')
     print('What would you like to do with the Matrix:' \
-         '\n(1) Addition\n(2) Subtraction\n(3) gaussian(for A and B)\n(4) Dot Product\n(5) Transposition\n(6) get inv\n(7) get LU\n(8) solve system')
+         '\n(1) Add\n(2) Subtract\n(3) gaussian(for A and B)\n(4) Dot Product\n(5) Transpose\n(6) get inv\n(7) get LU\n(8) solve system')
     print('===================================================================================================')
     choice=input()
     choice=int(choice)
